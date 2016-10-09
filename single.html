@@ -11,7 +11,8 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
-    <script src="controller/mainController.js"></script>
+    <script src="controller/singleController.js"></script>
+
 
 </head>
 
@@ -49,7 +50,7 @@
         </div>
     </div>
     <!-- Raw -->
-    <div class="container">
+    <div class="container" ng-controller="rawController">
         <div class="row">
             <div class="col s12">
                 <div class="card hoverable">
@@ -57,14 +58,14 @@
                         <span class="card-title">Add Raw Materials</span>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input placeholder="Enter Raw material" id="raw_material" type="text" class="validate">
-                                <input placeholder="Enter price per kg" id="price_per_kg" type="text" class="validate">
+                                <input placeholder="Enter Raw material" ng-model="raw_material" id="raw_material" type="text" class="validate">
+                                <input placeholder="Enter price per kg" ng-model="price_per_kg" id="price_per_kg" type="text" class="validate">
                             </div>
                         </div>
                     </div>
                     <div class="card-action">
-                        <input type="submit" class="waves-effect waves-light btn" value="ADD MATERIALS">
-                        <input type="submit" class="waves-effect waves-light btn" value="CLEAR">
+                        <input type="submit" class="waves-effect waves-light btn" ng-click="rawCheck(raw_material)" value="ADD MATERIALS">
+                        <input type="submit" class="waves-effect waves-light btn" ng-click="rawClear()" value="CLEAR">
                     </div>
                 </div>
             </div>
